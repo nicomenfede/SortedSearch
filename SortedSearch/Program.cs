@@ -5,15 +5,11 @@ public class SortedSearch
 {
     public static int CountNumbers(int[] sortedArray, int lessThan)
     {
-        int count = 0;
-        foreach (int i in sortedArray) 
-        {
-            if (i >= lessThan)
-                return count;
-            else
-                count++;
-        }
-        return count;
+        int val = Array.BinarySearch(sortedArray, lessThan);
+
+        return val >= 0 
+            ? val 
+            : ~val;
     }
 
     public static void Main(string[] args)
