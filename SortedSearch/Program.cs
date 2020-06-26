@@ -5,12 +5,15 @@ public class SortedSearch
 {
     public static int CountNumbers(int[] sortedArray, int lessThan)
     {
-        for (int i = 0; i < sortedArray.Length; i++) 
+        int count = 0;
+        foreach (int i in sortedArray) 
         {
-            if (sortedArray[i] >= lessThan)
-                return i;
+            if (i >= lessThan)
+                return count;
+            else
+                count++;
         }
-        return 0;
+        return count;
     }
 
     public static void Main(string[] args)
